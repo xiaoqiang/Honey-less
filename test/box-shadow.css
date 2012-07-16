@@ -1,1 +1,1 @@
-.test-box-shadow{-webkit-box-shadow:5px;-moz-box-shadow:5px;box-shadow:5px;}
+.test-box-shadow{-webkit-box-shadow:rgba(0, 0, 0, 0.6) 5px 5px 5px 5px;-moz-box-shadow:rgba(0, 0, 0, 0.6) 5px 5px 5px 5px;box-shadow:rgba(0, 0, 0, 0.6) 5px 5px 5px 5px;}

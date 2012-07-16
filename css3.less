@@ -45,8 +45,14 @@
  * @mixin rotate
  * @mixin skew
  *
- * Animation:
+ * Transition:
  * @mixin transition
+ * @mixin transition-property
+ * @mixin transition-duration
+ * @mixin transition-timing-function
+ * @mixin transition-delay
+ * 
+ * Animation
  *
 ************************************************************/
 
@@ -618,8 +624,8 @@
  *
  * @param properties          :  all, left, opacity, etc
  * @param duration            :  1s, 1000ms
- * @param delay               :  1s, 1000ms
  * @param easing              :  linear, ease-in-out, etc
+ * @param delay               :  1s, 1000ms 
  *
  * @see http: //www.w3.org/TR/css3-transitions/
  *
@@ -634,3 +640,81 @@
 }
 
 
+
+/************************************************************
+ *
+ * transition-property
+ *
+ * @param properties          :  all, left, opacity, etc
+ *
+ * @see http://www.w3.org/TR/css3-transitions/#transition-property-property
+ *
+************************************************************/
+
+.transition-property(...) {
+    -webkit-transition-property: @arguments;
+       -moz-transition-property: @arguments;
+        -ms-transition-property: @arguments;
+         -o-transition-property: @arguments;
+            transition-property: @arguments;
+}
+
+
+
+/************************************************************
+ *
+ * transition-duration
+ *
+ * @param duration            :  1s, 1000ms
+ *
+ * @see http://www.w3.org/TR/css3-transitions/#transition-duration-property
+ *
+************************************************************/
+
+.transition-duration(...) {
+    -webkit-transition-duration: @arguments;
+       -moz-transition-duration: @arguments;
+        -ms-transition-duration: @arguments;
+         -o-transition-property: @arguments;
+            transition-duration: @arguments;
+}
+
+
+
+/************************************************************
+ *
+ * transition-timing-function
+ *
+ * @param easing              :  linear, ease-in-out, etc
+ *
+ * @see http://www.w3.org/TR/css3-transitions/#transition-timing-function-property
+ *
+************************************************************/
+
+.transition-timing-function(...) {
+    -webkit-transition-timing-function: @arguments;
+       -moz-transition-timing-function: @arguments;
+        -ms-transition-timing-function: @arguments;
+         -o-transition-timing-function: @arguments;
+            transition-timing-function: @arguments;
+}
+
+
+
+/************************************************************
+ *
+ * transition-delay
+ *
+ * @param delay            :  1s, 1000ms
+ *
+ * @see http://www.w3.org/TR/css3-transitions/#transition-duration-property
+ *
+************************************************************/
+
+.transition-delay(...) {
+    -webkit-transition-delay: @arguments;
+       -moz-transition-delay: @arguments;
+        -ms-transition-delay: @arguments;
+         -o-transition-delay: @arguments;
+            transition-delay: @arguments;
+}
