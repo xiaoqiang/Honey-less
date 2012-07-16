@@ -54,7 +54,16 @@
  * @mixin transition-delay
  * 
  * Animation
- * wait for add
+ * @mixin animation
+ * @mixin animation-name
+ * @mixin animation-duration 
+ * @mixin animation-timing-function
+ * @mixin animation-delay
+ * @mixin animation-iteration-count 
+ * @mixin animation-direction
+ * @mixin animation-play-state
+ * @mixin keyframes interface 
+ * @mixin keyframes
 ************************************************************/
 
 
@@ -68,7 +77,7 @@
  *
 ************************************************************/
 
-.display-box(...) {
+.display-box() {
     display: -webkit-box;
     display: -moz-box;
     display: -ms-box;
@@ -277,6 +286,30 @@
         -ms-appearance: @arguments;
          -o-appearance: @arguments;
             appearance: @arguments;
+}
+
+
+
+/************************************************************
+ *
+ * font-face
+ *
+ * @param url                  :  local or net
+ * @param font-name            :  font-name
+ *
+ * @example .font-face('xiaoqiang.org/', 'myfont');
+ * 
+ * @see http://www.w3.org/TR/css3-fonts/
+ *
+************************************************************/
+
+.font-face(@url, @font-name) {
+    font-family: '@{font-name}';
+    src: url('//@{url}@{font-name}.eot'); /* IE9 Compat Modes */
+    src: url('//@{url}@{font-name}.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('//@{url}@{font-name}.woff') format('woff'), /* Modern Browsers */
+         url('//@{url}@{font-name}.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('//@{url}@{font-name}.svg#@{font-name}') format('svg'); /* Legacy iOS */
 }
 
 
@@ -741,3 +774,305 @@
          -o-transition-delay: @arguments;
             transition-delay: @arguments;
 }
+
+
+
+/************************************************************
+ *
+ * animation
+ *
+ * @param animation-name            :  none | <identifier>                                     
+ * @param animation-duration        :  1s, 1000ms
+ * @param animation-timing-function :  linear                     |
+ *                                     ease                       |
+ *                                     ease-in                    |
+ *                                     ease-out                   |
+ *                                     ease-in-out                |
+ *                                     cubic-bezier(0, 0, 10, 10)
+ * @param animation-delay           :  1s, 1000ms
+ * @param animation-iteration-count :  infinite | <number>
+ * @param animation-direction       :  normal | alternate
+ * @param animation-play-state      :  running | paused
+ * @param animation-fill-mode       :  none                       | 
+ *                                     forwards                   |
+ *                                     backwards                  | 
+ *                                     both [ , none | forwards | backwards | both ]*
+ *
+ * @see http://www.w3.org/TR/css3-animations/
+ *
+************************************************************/
+
+.animation(...) {
+    -webkit-animation: @arguments;
+       -moz-animation: @arguments;
+        -ms-animation: @arguments;
+         -o-animation: @arguments;
+            animation: @arguments;
+}
+
+
+
+/************************************************************
+ *
+ * animation-name
+ *
+ * @param animation-name            :  none | <identifier> 
+ *
+ * @see http://www.w3.org/TR/css3-animations/#animation-name-property
+ *
+************************************************************/
+
+.animation-name(...) {
+    -webkit-animation-name: @arguments;
+       -moz-animation-name: @arguments;
+        -ms-animation-name: @arguments;
+         -o-animation-name: @arguments;
+            animation-name: @arguments;
+}
+
+
+
+/************************************************************
+ *
+ * animation-duration 
+ *                                
+ * @param animation-duration        :  1s, 1000ms 
+ *
+ * @see http://www.w3.org/TR/css3-animations/#animation-duration-property
+ *
+************************************************************/
+
+.animation-duration (...) {
+    -webkit-animation-duration : @arguments;
+       -moz-animation-duration : @arguments;
+        -ms-animation-duration : @arguments;
+         -o-animation-duration : @arguments;
+            animation-duration : @arguments;
+}
+
+
+
+/************************************************************
+ *
+ * animation-timing-function
+ *
+ * @param animation-timing-function :  linear                     |
+ *                                     ease                       |
+ *                                     ease-in                    |
+ *                                     ease-out                   |
+ *                                     ease-in-out                |
+ *                                     cubic-bezier(0, 0, 10, 10) 
+ *
+ * @see http://www.w3.org/TR/css3-animations/#animation-timing-function-property
+ *
+************************************************************/
+
+.animation-timing-function(...) {
+    -webkit-animation-timing-function: @arguments;
+       -moz-animation-timing-function: @arguments;
+        -ms-animation-timing-function: @arguments;
+         -o-animation-timing-function: @arguments;
+            animation-timing-function: @arguments;
+}
+
+
+
+/************************************************************
+ *
+ * animation-delay 
+ *
+ * @param animation-delay           :  1s, 1000ms 
+ *
+ * @see http://www.w3.org/TR/css3-animations/#animation-delay-property
+ *
+************************************************************/
+
+.animation-delay (...) {
+    -webkit-animation-delay : @arguments;
+       -moz-animation-delay : @arguments;
+        -ms-animation-delay : @arguments;
+         -o-animation-delay : @arguments;
+            animation-delay : @arguments;
+}
+
+
+
+/************************************************************
+ *
+ * animation-iteration-count
+ *
+ * @param animation-iteration-count :  infinite | <number>
+ *
+ * @see http://www.w3.org/TR/css3-animations/#animation-iteration-count-property
+ *
+************************************************************/
+
+.animation-iteration-count(...) {
+    -webkit-animation-iteration-count: @arguments;
+       -moz-animation-iteration-count: @arguments;
+        -ms-animation-iteration-count: @arguments;
+         -o-animation-iteration-count: @arguments;
+            animation-iteration-count: @arguments;
+}
+
+
+
+/************************************************************
+ *
+ * animation-direction
+ *
+ * @param animation-direction       :  normal | alternate 
+ *
+ * @see http://www.w3.org/TR/css3-animations/#animation-direction-property
+ *
+************************************************************/
+
+.animation-direction(...) {
+    -webkit-animation-direction: @arguments;
+       -moz-animation-direction: @arguments;
+        -ms-animation-direction: @arguments;
+         -o-animation-direction: @arguments;
+            animation-direction: @arguments;
+}
+
+
+
+/************************************************************
+ *
+ * animation-play-state
+ * 
+ * @param animation-play-state      :  running | paused
+ * 
+ * @see http://www.w3.org/TR/css3-animations/#animation-play-state-property
+ *
+************************************************************/
+
+.animation-play-state(...) {
+    -webkit-animation-play-state: @arguments;
+       -moz-animation-play-state: @arguments;
+        -ms-animation-play-state: @arguments;
+         -o-animation-play-state: @arguments;
+            animation-play-state: @arguments;
+}
+
+
+
+/************************************************************
+ *
+ * animation-fill-mode
+ *
+ * @param animation-fill-mode       :  none                       | 
+ *                                     forwards                   |
+ *                                     backwards                  | 
+ *                                     both [ , none | forwards | backwards | both ]*
+ *
+ * @see http://www.w3.org/TR/css3-animations/#animation-fill-mode-property
+ *
+************************************************************/
+
+.animation-fill-mode(...) {
+    -webkit-animation-fill-mode: @arguments;
+       -moz-animation-fill-mode: @arguments;
+        -ms-animation-fill-mode: @arguments;
+         -o-animation-fill-mode: @arguments;
+            animation-fill-mode: @arguments;
+}
+
+
+
+/************************************************************
+ *
+ * keyframes interface 
+ *
+ *
+************************************************************/
+
+.keyframes-0() {}
+
+.keyframes-10() {}
+
+.keyframes-20() {}
+
+.keyframes-30() {}
+
+.keyframes-40() {}
+
+.keyframes-50() {}
+
+.keyframes-60() {}
+
+.keyframes-70() {}
+
+.keyframes-80() {}
+
+.keyframes-90() {}
+
+.keyframes-100() {}
+
+/************************************************************
+ *
+ * animation-fill-mode
+ *
+ * @param animation-fill-mode       :  none                       | 
+ *                                     forwards                   |
+ *                                     backwards                  | 
+ *                                     both [ , none | forwards | backwards | both ]*
+ *
+ * @see http://www.w3.org/TR/css3-animations/#animation-fill-mode-property
+ *
+************************************************************/
+
+@newline: `"\n"`; 
+.animation_func(@selector, @selector-animation) {
+    .Keyframe(@pre, @post, @vendor) {
+        (~"@{pre}@@{vendor}keyframes @{name} {@{newline}0%") {
+            .keyframes-0();
+        }    
+        10%  { 
+            .keyframes-10();
+        }
+        20%  { 
+            .keyframes-20();
+        }
+        30%  { 
+            .keyframes-30();
+        }
+        40%  { 
+            .keyframes-40();
+        }
+        50%  { 
+            .keyframes-50();
+        }
+        60%  { 
+            .keyframes-60();
+        }
+        70%  { 
+            .keyframes-70();
+        } 
+        80%  { 
+            .keyframes-80();
+        } 
+        90%  { 
+            .keyframes-90();
+        } 
+        100%  { 
+            .keyframes-100();
+        }    
+        .Local(){}
+        .Local() when (@post=1) {
+            (~"}@{newline}@{selector}") {
+                -webkit-animation : @selector-animation;
+                   -moz-animation : @selector-animation;                
+                    -ms-animation : @selector-animation;
+                     -o-animation : @selector-animation;                
+                        animation : @selector-animation;
+            } 
+        }    
+        .Local;
+    } 
+    .Keyframe(""            , 0,    "-moz-");
+    .Keyframe(~"}@{newline}", 0, "-webkit-");
+    .Keyframe(~"}@{newline}", 0,      "-o-");
+    .Keyframe(~"}@{newline}", 0,     "-ms-");
+    .Keyframe(~"}@{newline}", 1,         ""); 
+} 
