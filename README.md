@@ -4,15 +4,13 @@ honey-less
 ==========
 
  * @description CSS3 mixins for projects using LESS
- * @see http: //lesscss.org/
+ * @see http://lesscss.org/
  * @version 2.10
- *
  * @author Matthew Wagerfield
- * @see http: //matthew.wagerfield.com
- * @see http: //twitter.com/mwagerfield
- *
+ * @see http://matthew.wagerfield.com
+ * @see http://twitter.com/mwagerfield
  * @author XiaoQiang
- * @see http: //xiaoqiang.org 
+ * @see [xiaoqiang.org](http://xiaoqiang.org) 
  
 index
 ===========================
