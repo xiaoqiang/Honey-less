@@ -1,6 +1,6 @@
 
 
- * honey-less
+ ** honey-less
  * @description CSS3 mixins for projects using LESS
  * @see http: //lesscss.org/
  * @version 2.10
@@ -10,11 +10,9 @@
  * @see http: //twitter.com/mwagerfield
  *
  * @author XiaoQiang
- * @see http: //xiaoqiang.org
- *
- * ---------- INDEX ----------
- *
- * Display:
+ * @see http: //xiaoqiang.org 
+ ** ---------- INDEX ---------- 
+ *** Display:
  * @mixin display-box
  * @mixin box-orient
  * @mixin box-pack
@@ -24,15 +22,13 @@
  * @mixin background-size
  * @mixin user-select
  * @mixin appearance
- * 
- * Decoration:
+ *** Decoration:
  * @mixin border-radius
  * @mixin box-shadow
  * @mixin text-shadow
  * @mixin linear-gradient
- * @mixin radial-gradient
- *
- * Transformation:
+ * @mixin radial-gradient 
+ *** Transformation:
  * @mixin transform
  * @mixin transform-origin
  * @mixin transform-style
@@ -44,15 +40,13 @@
  * @mixin scale
  * @mixin rotate
  * @mixin skew
- *
- * Transition:
+ *** Transition:
  * @mixin transition
  * @mixin transition-property
  * @mixin transition-duration
  * @mixin transition-timing-function
  * @mixin transition-delay
- * 
- * Animation
+ *** Animation
  * @mixin animation
  * @mixin animation-name
  * @mixin animation-duration 
