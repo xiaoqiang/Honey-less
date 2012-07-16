@@ -22,6 +22,7 @@
  * @mixin box-align
  * @mixin box-flex
  * @mixin box-sizing
+ * @mixin background-size
  * @mixin user-select
  * @mixin appearance
  * 
@@ -53,7 +54,7 @@
  * @mixin transition-delay
  * 
  * Animation
- *
+ * wait for add
 ************************************************************/
 
 
@@ -183,16 +184,37 @@
  *                               border-box  |
  *                               inherit
  *
- * @see http: //www.w3.org/TR/css3-ui/#box-sizing
+ * @see http://www.w3.org/TR/css3-ui/#box-sizing0
  *
 ************************************************************/
 
 .box-sizing(...) {
-    -webkit-box-sizing: @arguments;
-       -moz-box-sizing: @arguments;
+    -webkit-box-sizing: @arguments; /* <=iOS4, <= Android  2.3 */
+       -moz-box-sizing: @arguments; /* FF1+ */
         -ms-box-sizing: @arguments;
          -o-box-sizing: @arguments;
-            box-sizing: @arguments;
+            box-sizing: @arguments; /* Chrome, IE8, Opera, Safari 5.1*/
+}
+
+
+
+/************************************************************
+ *
+ * background-size
+ *
+ * @param value               :  px       |
+ *                               %        |
+ *                               auto     |
+ *                               cover    |
+ *                               contain  | 
+ *
+ * @see http://www.w3.org/TR/2002/WD-css3-background-20020802/#background-size
+ *
+************************************************************/
+
+.background-size(...) {
+    -webkit-background-size: @arguments; /* Saf3-4 */
+            background-size: @arguments; /* Opera, IE9, Saf5.1, Chrome13.0, FF4.0 */
 }
 
 
@@ -273,10 +295,11 @@
 ************************************************************/
 
 .border-radius(...) {
-      -webkit-border-radius: @arguments;
+      -webkit-border-radius: @arguments; /* Saf3-4, iOS 1-3.2, Android ≤1.6 */
          -moz-border-radius: @arguments;
-              border-radius: @arguments;
+              border-radius: @arguments; /* Opera 10.5 IE9, Saf5, Chrome, FF4, iOS 4, Android 2.1+ */
 
+    /* useful if you don't want a bg color from leaking outside the border: */
     -webkit-background-clip: padding-box;
        -moz-background-clip: padding;
             background-clip: padding-box;
@@ -300,9 +323,9 @@
 ************************************************************/
 
 .box-shadow(...) {
-    -webkit-box-shadow: @arguments;
+    -webkit-box-shadow: @arguments; /* Saf3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
        -moz-box-shadow: @arguments;
-            box-shadow: @arguments;
+            box-shadow: @arguments; /* Opera 10.5, IE9, FF4+, Chrome 6+, iOS 5 */
 }
 
 
@@ -321,7 +344,7 @@
 ************************************************************/
 
 .text-shadow(...) {
-    text-shadow: @arguments;
+    text-shadow: @arguments; /* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
 }
 
 
@@ -342,10 +365,10 @@
 ************************************************************/
 
 .linear-gradient(...) {
-    background-image: -webkit-linear-gradient(@arguments);
-    background-image: -moz-linear-gradient(@arguments);
+    background-image: -webkit-linear-gradient(@arguments); /* Chrome 10+, Saf5.1+, iOS 5+ */
+    background-image: -moz-linear-gradient(@arguments); /* FF3.6 */
     background-image: -ms-linear-gradient(@arguments);
-    background-image: -o-linear-gradient(@arguments);
+    background-image: -o-linear-gradient(@arguments); /* Opera 11.10+ */
     background-image: linear-gradient(@arguments);
 }
 
@@ -392,10 +415,10 @@
 ************************************************************/
 
 .transform(...) {
-    -webkit-transform: @arguments;
-       -moz-transform: @arguments;
-        -ms-transform: @arguments;
-         -o-transform: @arguments;
+    -webkit-transform: @arguments; /* Saf3.2+, Chrome */
+       -moz-transform: @arguments; /* FF4+ */
+        -ms-transform: @arguments; /* IE10 */
+         -o-transform: @arguments; /* Opera 10.5+ */
             transform: @arguments;
 }
 
@@ -457,9 +480,9 @@
 ************************************************************/
 
 .perspective(...) {
-    -webkit-perspective: @arguments;
-       -moz-perspective: @arguments;
-        -ms-perspective: @arguments;
+    -webkit-perspective: @arguments; /* Saf4+, Chrome 12+ */
+       -moz-perspective: @arguments; /* FF10+ */
+        -ms-perspective: @arguments; /* IE10+ */
          -o-perspective: @arguments;
             perspective: @arguments;
 }
@@ -569,10 +592,10 @@
 ************************************************************/
 
 .scale(...) {
-    -webkit-transform: scale(@arguments);
-       -moz-transform: scale(@arguments);
-        -ms-transform: scale(@arguments);
-         -o-transform: scale(@arguments);
+    -webkit-transform: scale(@arguments); /* Saf3.1+, Chrome */
+       -moz-transform: scale(@arguments); /* FF3.5+ */
+        -ms-transform: scale(@arguments); /* IE9 */
+         -o-transform: scale(@arguments); /* Opera 10.5+ */
             transform: scale(@arguments);
 }
 
@@ -588,10 +611,10 @@
 ************************************************************/
 
 .rotate(...) {
-    -webkit-transform: rotate(@arguments);
-       -moz-transform: rotate(@arguments);
-        -ms-transform: rotate(@arguments);
-         -o-transform: rotate(@arguments);
+    -webkit-transform: rotate(@arguments); /* Saf3.1+, Chrome */
+       -moz-transform: rotate(@arguments); /* FF3.5+ */
+        -ms-transform: rotate(@arguments); /* IE9 */
+         -o-transform: rotate(@arguments); /* Opera 10.5 */
             transform: rotate(@arguments);
 }
 
