@@ -1,7 +1,6 @@
-/************************************************************
- *
+
+
  * honey-less
- *
  * @description CSS3 mixins for projects using LESS
  * @see http: //lesscss.org/
  * @version 2.10
@@ -64,4 +63,4 @@
  * @mixin animation-play-state
  * @mixin keyframes interface 
  * @mixin keyframes
-************************************************************/
+
