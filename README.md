@@ -13,6 +13,7 @@ honey-less
  *
  * @author XiaoQiang
  * @see http: //xiaoqiang.org 
+ 
 index
 ===========================
 
@@ -28,6 +29,7 @@ Display:
  * @mixin background-size
  * @mixin user-select
  * @mixin appearance
+ 
 Decoration:
 ---------------------------
 
@@ -61,8 +63,8 @@ Transition:
  * @mixin transition-timing-function
  * @mixin transition-delay
  
- ### Animation
- ---------------------------
+Animation
+---------------------------
  
  * @mixin animation
  * @mixin animation-name
