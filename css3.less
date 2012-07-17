@@ -982,8 +982,7 @@
 
 /************************************************************
  *
- * keyframes interface 
- *
+ * keyframes interface
  *
 ************************************************************/
 
@@ -1011,21 +1010,22 @@
 
 /************************************************************
  *
- * animation_func
+ * animation-func
  *
- * @param selector               : <#id>    | <.class>
- * @param selector-animation     : test .1s .1s ease-in etc
+ * @param selector               : ~'#id'    |  ~'.class'
+ * @param animation-name         : <animationname>
+ * @param animation-other        : ~' .1s .1s ease-in ...'
  * 
- * @example .animation_func(#test, testanimation .5s .5s ease-in);
+ * @example .animation-func(~'#test', testanimation, ~' .5s ease-in .5s');
  *
  * @see http://www.w3.org/TR/css3-animations/#animation-fill-mode-property
  *
 ************************************************************/
 
 @newline: `"\n"`; 
-.animation_func(@selector, @selector-animation) {
+.animation-func(@selector, @animation-name, @animation-other) {
     .Keyframe(@pre, @post, @vendor) {
-        (~"@{pre}@@{vendor}keyframes @{name} {@{newline}0%") {
+        (~"@{pre}@@{vendor}keyframes @{animation-name} {@{newline}0%") {
             .keyframes-0();
         }    
         10%  { 
@@ -1061,11 +1061,11 @@
         .Local(){}
         .Local() when (@post=1) {
             (~"}@{newline}@{selector}") {
-                -webkit-animation : @selector-animation;
-                   -moz-animation : @selector-animation;                
-                    -ms-animation : @selector-animation;
-                     -o-animation : @selector-animation;                
-                        animation : @selector-animation;
+                -webkit-animation : @animation-name @animation-other;
+                   -moz-animation : @animation-name @animation-other;                
+                    -ms-animation : @animation-name @animation-other;
+                     -o-animation : @animation-name @animation-other;                
+                        animation : @animation-name @animation-other;
             } 
         }    
         .Local;
