@@ -3,14 +3,7 @@
 honey-less
 ==========
 
- * @description CSS3 mixins for projects using LESS
- * @see http://lesscss.org/
- * @version 2.10
- * @author Matthew Wagerfield
- * @see http://matthew.wagerfield.com
- * @see http://twitter.com/mwagerfield
- * @author XiaoQiang
- * @see [xiaoqiang.org](http://xiaoqiang.org) 
+在你的less文件中@import "css3.less"就可以随意使用css3 mixin了，so easy！
  
 index
 ===========================
