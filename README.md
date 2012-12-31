@@ -1,5 +1,5 @@
 
-honey-less
+Honey-less
 ==========
 
 在你的less文件中@import "css3.less"就可以随意使用css3 mixin了，so easy！
@@ -24,6 +24,7 @@ less:
 	    background-clip: padding-box;
 	}
 
+![animation](http://www.xiaoqiang.org/wp-content/uploads/2012/09/honey-less.jpg)
  
 Index
 =====
