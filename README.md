@@ -1,9 +1,17 @@
 
-
 honey-less
 ==========
 
 在你的less文件中@import "css3.less"就可以随意使用css3 mixin了，so easy！
+
+Example
+=======
+
+  @import "../css3.less";
+  .test-border-radius {
+      .border-radius(5px);
+  }
+
  
 index
 ===========================
