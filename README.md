@@ -6,15 +6,27 @@ honey-less
 
 Example
 =======
+less:
 
-  @import "../css3.less";
-  .test-border-radius {
-      .border-radius(5px);
-  }
+	@import "../css3.less";
+	.test-border-radius {
+	    .border-radius(5px);
+	}
+
+编译后的css:
+
+	.test-border-radius {
+	    -webkit-border-radius: 5px;
+	    -moz-border-radius: 5px;
+	    border-radius: 5px;
+	    -webkit-background-clip: padding-box;
+	    -moz-background-clip: padding;
+	    background-clip: padding-box;
+	}
 
  
-index
-===========================
+Index
+=====
 
 Display:
 ---------------------------
